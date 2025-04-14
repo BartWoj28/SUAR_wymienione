@@ -31,6 +31,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayoutPID;
     QGridLayout *gridLayout_2;
     QLabel *label_5;
     QLabel *label_6;
@@ -38,15 +39,6 @@ public:
     QDoubleSpinBox *spinBoxK;
     QDoubleSpinBox *spinBoxTd;
     QLabel *label_7;
-    QVBoxLayout *verticalLayoutPID;
-    QVBoxLayout *verticalLayoutUchyb;
-    QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout;
-    QPushButton *startButton;
-    QPushButton *wznowButton;
-    QPushButton *stopButton;
-    QPushButton *resetButton;
-    QPushButton *pushButton;
     QGridLayout *gridLayout_3;
     QDoubleSpinBox *spinBoxAmplituda;
     QLabel *label_8;
@@ -65,6 +57,16 @@ public:
     QPushButton *pushButtonARX;
     QComboBox *comboBoxSposobCalkowania;
     QPushButton *pushButtonResetCalka;
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout_3;
+    QPushButton *butSerwer;
+    QPushButton *butKlient;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *startButton;
+    QPushButton *wznowButton;
+    QPushButton *stopButton;
+    QPushButton *resetButton;
+    QVBoxLayout *verticalLayoutUchyb;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -85,6 +87,11 @@ public:
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName("gridLayout");
+        verticalLayoutPID = new QVBoxLayout();
+        verticalLayoutPID->setObjectName("verticalLayoutPID");
+
+        gridLayout->addLayout(verticalLayoutPID, 3, 1, 3, 1);
+
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName("gridLayout_2");
         label_5 = new QLabel(centralwidget);
@@ -149,60 +156,6 @@ public:
 
 
         gridLayout->addLayout(gridLayout_2, 3, 0, 1, 1);
-
-        verticalLayoutPID = new QVBoxLayout();
-        verticalLayoutPID->setObjectName("verticalLayoutPID");
-
-        gridLayout->addLayout(verticalLayoutPID, 3, 1, 2, 1);
-
-        verticalLayoutUchyb = new QVBoxLayout();
-        verticalLayoutUchyb->setObjectName("verticalLayoutUchyb");
-
-        gridLayout->addLayout(verticalLayoutUchyb, 3, 2, 2, 1);
-
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName("verticalLayout");
-        verticalLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
-
-        gridLayout->addLayout(verticalLayout, 0, 1, 3, 2);
-
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName("horizontalLayout");
-        startButton = new QPushButton(centralwidget);
-        startButton->setObjectName("startButton");
-        startButton->setMinimumSize(QSize(0, 100));
-        startButton->setAutoFillBackground(true);
-
-        horizontalLayout->addWidget(startButton);
-
-        wznowButton = new QPushButton(centralwidget);
-        wznowButton->setObjectName("wznowButton");
-        wznowButton->setMinimumSize(QSize(0, 100));
-        wznowButton->setAutoFillBackground(true);
-
-        horizontalLayout->addWidget(wznowButton);
-
-        stopButton = new QPushButton(centralwidget);
-        stopButton->setObjectName("stopButton");
-        stopButton->setMinimumSize(QSize(0, 100));
-        stopButton->setAutoFillBackground(true);
-
-        horizontalLayout->addWidget(stopButton);
-
-        resetButton = new QPushButton(centralwidget);
-        resetButton->setObjectName("resetButton");
-        resetButton->setMinimumSize(QSize(0, 100));
-        resetButton->setAutoFillBackground(true);
-
-        horizontalLayout->addWidget(resetButton);
-
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-
-        horizontalLayout->addWidget(pushButton);
-
-
-        gridLayout->addLayout(horizontalLayout, 4, 0, 1, 1);
 
         gridLayout_3 = new QGridLayout();
         gridLayout_3->setObjectName("gridLayout_3");
@@ -341,6 +294,65 @@ public:
 
         gridLayout->addLayout(horizontalLayout_2, 2, 0, 1, 1);
 
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
+
+        gridLayout->addLayout(verticalLayout, 0, 1, 3, 2);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        butSerwer = new QPushButton(centralwidget);
+        butSerwer->setObjectName("butSerwer");
+
+        horizontalLayout_3->addWidget(butSerwer);
+
+        butKlient = new QPushButton(centralwidget);
+        butKlient->setObjectName("butKlient");
+
+        horizontalLayout_3->addWidget(butKlient);
+
+
+        gridLayout->addLayout(horizontalLayout_3, 5, 0, 1, 1);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName("horizontalLayout");
+        startButton = new QPushButton(centralwidget);
+        startButton->setObjectName("startButton");
+        startButton->setMinimumSize(QSize(0, 100));
+        startButton->setAutoFillBackground(true);
+
+        horizontalLayout->addWidget(startButton);
+
+        wznowButton = new QPushButton(centralwidget);
+        wznowButton->setObjectName("wznowButton");
+        wznowButton->setMinimumSize(QSize(0, 100));
+        wznowButton->setAutoFillBackground(true);
+
+        horizontalLayout->addWidget(wznowButton);
+
+        stopButton = new QPushButton(centralwidget);
+        stopButton->setObjectName("stopButton");
+        stopButton->setMinimumSize(QSize(0, 100));
+        stopButton->setAutoFillBackground(true);
+
+        horizontalLayout->addWidget(stopButton);
+
+        resetButton = new QPushButton(centralwidget);
+        resetButton->setObjectName("resetButton");
+        resetButton->setMinimumSize(QSize(0, 100));
+        resetButton->setAutoFillBackground(true);
+
+        horizontalLayout->addWidget(resetButton);
+
+
+        gridLayout->addLayout(horizontalLayout, 4, 0, 1, 1);
+
+        verticalLayoutUchyb = new QVBoxLayout();
+        verticalLayoutUchyb->setObjectName("verticalLayoutUchyb");
+
+        gridLayout->addLayout(verticalLayoutUchyb, 3, 2, 3, 1);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -361,11 +373,6 @@ public:
         label_5->setText(QCoreApplication::translate("MainWindow", "k", nullptr));
         label_6->setText(QCoreApplication::translate("MainWindow", "Ti", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "Td", nullptr));
-        startButton->setText(QCoreApplication::translate("MainWindow", "ZADAJ ", nullptr));
-        wznowButton->setText(QCoreApplication::translate("MainWindow", "START", nullptr));
-        stopButton->setText(QCoreApplication::translate("MainWindow", "STOP", nullptr));
-        resetButton->setText(QCoreApplication::translate("MainWindow", "RESET", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         label_8->setText(QCoreApplication::translate("MainWindow", "AMPLITUDA", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "WYPELNIENIE", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "OKRES", nullptr));
@@ -377,6 +384,12 @@ public:
         comboBoxSposobCalkowania->setItemText(1, QCoreApplication::translate("MainWindow", "Ti pod ca\305\202k\304\205", nullptr));
 
         pushButtonResetCalka->setText(QCoreApplication::translate("MainWindow", "Resetuj cz\304\231\305\233\304\207 ca\305\202kuj\304\205c\304\205", nullptr));
+        butSerwer->setText(QCoreApplication::translate("MainWindow", "SERWER", nullptr));
+        butKlient->setText(QCoreApplication::translate("MainWindow", "KLIENT", nullptr));
+        startButton->setText(QCoreApplication::translate("MainWindow", "ZADAJ ", nullptr));
+        wznowButton->setText(QCoreApplication::translate("MainWindow", "START", nullptr));
+        stopButton->setText(QCoreApplication::translate("MainWindow", "STOP", nullptr));
+        resetButton->setText(QCoreApplication::translate("MainWindow", "RESET", nullptr));
     } // retranslateUi
 
 };
